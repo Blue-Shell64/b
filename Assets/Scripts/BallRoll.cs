@@ -5,10 +5,12 @@ public class BallRoll : MonoBehaviour
 {
     public float force = 10f;
     private Rigidbody rb;
+    private Vector3 startPos;
     void Start()
     {
 
         rb = GetComponent<Rigidbody>();
+        startPos = transform.position;
     }
 
     // Update is called once per frame
@@ -25,5 +27,11 @@ public class BallRoll : MonoBehaviour
         Vector3 direction = new Vector3(x, 0f, z).normalized;
 
         rb.AddForce(direction * force);
+    }
+    public void Respawn()
+    {
+        rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        transform.position = startPos;
     }
 }
