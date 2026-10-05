@@ -4,13 +4,13 @@ using UnityEngine.InputSystem;
 public class BallRoll : MonoBehaviour
 {
     public float force = 10f;
+    public const float y = 10000f;
     private Rigidbody rb;
-    private Vector3 startPos;
+    private Vector3 startPositon;
     void Start()
     {
-
-        rb = GetComponent<Rigidbody>();
-        startPos = transform.position;
+        startPositon = transform.position;
+        rb = GetComponent<Rigidbody>();    
     }
 
     // Update is called once per frame
@@ -18,12 +18,13 @@ public class BallRoll : MonoBehaviour
     {
         float x = 0f;
         float z = 0f;
+        float y = 0f;
         Keyboard kb = Keyboard.current;
         if (kb.aKey.isPressed) x = -1f;
         if (kb.dKey.isPressed) x = 1f;
         if (kb.sKey.isPressed) z = -1f;
         if (kb.wKey.isPressed) z = 1f;
-
+      
         Vector3 direction = new Vector3(x, 0f, z).normalized;
 
         rb.AddForce(direction * force);
@@ -32,6 +33,8 @@ public class BallRoll : MonoBehaviour
     {
         rb.linearVelocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
-        transform.position = startPos;
+        transform.position = startPositon;
+
+        Debug.Log("Respawned");
     }
 }
