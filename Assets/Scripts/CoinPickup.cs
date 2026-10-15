@@ -8,7 +8,7 @@ public class CoinPickup : MonoBehaviour
     {
         scoreManager = FindFirstObjectByType<ScoreManager>();
     }
-    
+
     private void OnTriggerEnter(Collider other)
     {
         scoreManager.AddScore(score);
