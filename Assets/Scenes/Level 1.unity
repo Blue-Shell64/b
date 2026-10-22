@@ -806,7 +806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c582d188f51fe9f43a65660bf39c3591, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelButton
-  LevelToLoad: Level 2
+  LevelToLoad: 
 --- !u!114 &821383507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1386,7 +1386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
   target: {fileID: 1055798290}
-  angle: 30
+  angle: 45
   height: 8
 --- !u!1 &1471814240
 GameObject:
